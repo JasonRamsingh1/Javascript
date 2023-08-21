@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Area Calculator</title>
+</head>
+<body>
+    <script>
+        // Ask the user for their first name and store it in the variable Fname
+        var Fname = prompt("Please enter your first name:");
+
+        // Display a welcome message that contains the name they entered
+        var welcomeMessage = "Hello " + Fname + ", welcome to the Circle Area Calculator!";
+        // Create a new heading element and set its content to the welcome message
+        var heading = document.createElement("h1");
+        heading.textContent = welcomeMessage;
+
+        // Append the heading element to the body of the HTML document
+        document.body.appendChild(heading);
+
+        // Create the constant piValue to store the value of Pi to 7 significant digits
+        const piValue = 3.1415926;
+
+        // Ask the user to input their favorite number and store the value in a variable myFavNum
+        var myFavNum = parseFloat(prompt("Please enter your favorite number:"));
+
+        // Calculate the area of a circle using the user’s favorite number as the radius ( r )
+        var myArea = piValue * Math.pow(myFavNum, 2);
+
+        // Display the contents of each variable with appropriate messages
+        var message = "Hello " + Fname + ", you entered " + myFavNum + " as your favorite number. If that was the radius of a circle, the circle's area would be " + myArea.toFixed(6) + ".";
+        // Create a new paragraph element and set its content to the message
+        var paragraph = document.createElement("p");
+        paragraph.textContent = message;
+
+        // Append the paragraph element to the body of the HTML document
+        document.body.appendChild(paragraph);
+    </script>
+</body>
+</html>
