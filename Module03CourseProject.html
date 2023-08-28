@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task Program</title>
+</head>
+<body>
+
+<h2>Task 1: Odd/Even Count</h2>
+<div id="oddEvenOutput"></div>
+
+<h2>Task 2: Do While Loop</h2>
+<div id="doWhileOutput"></div>
+
+<h2>Task 3: Subjects Array</h2>
+<div id="subjectsOutput"></div>
+
+<script>
+  // Task 1: Odd/Even Count
+  let oddEvenOutput = document.getElementById("oddEvenOutput");
+  for (let i = 0; i <= 10; i++) {
+    if (i % 2 === 0) {
+      oddEvenOutput.innerHTML += `Count ${i} is even<br>`;
+    } else {
+      oddEvenOutput.innerHTML += `Count ${i} is odd<br>`;
+    }
+  }
+
+  // Task 2: Do While Loop
+  let myNum;
+  do {
+    myNum = parseInt(prompt("Enter a number between 5 and 20:"));
+  } while (isNaN(myNum) || myNum < 5 || myNum > 20);
+
+  let doWhileOutput = document.getElementById("doWhileOutput");
+  let counter = 1;
+  do {
+    doWhileOutput.innerHTML += `Loop counter: ${counter}<br>`;
+    counter++;
+  } while (counter <= myNum);
+
+  // Task 3: Subjects Array
+  const subjects = [
+    "Accounting",
+    "Algebra",
+    "Programming",
+    "Art",
+    "Data Analytics"
+  ];
+
+  let subjectsOutput = document.getElementById("subjectsOutput");
+  subjectsOutput.innerHTML = "<strong>Subjects:</strong><br>";
+  subjects.forEach(subject => {
+    subjectsOutput.innerHTML += `${subject}<br>`;
+  });
+
+  // Display array values separated by commas
+  subjectsOutput.innerHTML += "<br><strong>Subjects as comma-separated string:</strong><br>";
+  subjectsOutput.innerHTML += subjects.join(", ");
+</script>
+
+</body>
+</html>
