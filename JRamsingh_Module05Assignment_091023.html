@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Dog Object</title>
+</head>
+<body>
+    <script>
+        // Step 1: Create a literal object named myDog
+        var myDog = {
+            // Step 2: Define properties based on the TV program "Clifford the Cowardly Dog"
+            name: "Clifford",
+            owner: "Emily Elizabeth",
+            description: "A giant dog that gets in constant trouble",
+            // Additional property
+            mySound: "I may be big in size but I have a big heart",
+
+            // Step 3: Define a method to describe the dog
+            describe: function() {
+                return "Meet " + this.name + ", the pet dog of " + this.owner + ". " +
+                       "He is the title character of the series and " + this.description + ". " +
+                       "He might say, '" + this.mySound + "'.";
+            }
+        };
+
+        // Step 4: Display the dog's name and description
+        var dogDescription = myDog.describe();
+        alert(dogDescription);
+    </script>
+
+<html>
+<head>
+    <title>My Dog Object with Constructor</title>
+</head>
+<body>
+    <script>
+        // Step 1: Create a constructor for the dog object
+        function Dog(name, owner, description, mySound) {
+            // Step 2: Define properties based on the TV program "Clifford the Cowardly Dog"
+            this.name = name;
+            this.owner = owner;
+            this.description = description;
+            this.mySound = mySound;
+            // Additional property
+            this.canTalk = true;
+
+            // Step 3: Define a method to display a greeting with the dog's information
+            this.myGreeting = function() {
+                return "Hello, I'm " + this.name + "! I belong to " + this.owner + ". " +
+                       "I'm known as " + this.description + ". " +
+                       "You can talk to me because it's " + this.canTalk + ". " +
+                       "I might say, '" + this.mySound + "'.";
+            };
+        }
+
+        // Step 4: Create an instance of the Dog object
+        var myDogConst = new Dog("Clifford", "Emily Elizabeth", "a giant dog that gets in constant trouble", "I may be big in size but I have a big heart");
+
+        // Step 5: Call the object's method to display a greeting
+        var dogGreeting = myDogConst.myGreeting();
+        alert(dogGreeting);
+    </script>
+</body>
+</html>
