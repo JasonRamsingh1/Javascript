@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Dogs</title>
+</head>
+<body>
+    <script>
+        // Step 1: Create a constructor for the Dog object
+        function Dog(name, owner, description, mySound, canTalk) {
+            this.name = name;
+            this.owner = owner;
+            this.description = description;
+            this.mySound = mySound;
+            this.canTalk = canTalk;
+
+            // Step 2: Modify the myGreeting method to display if the dog can talk
+            this.myGreeting = function() {
+                if (this.canTalk) {
+                    return "Hello, I'm " + this.name + "! I can talk! I belong to " + this.owner + ". " +
+                           "I'm known as " + this.description + ". " +
+                           "I might say, '" + this.mySound + "'.";
+                } else {
+                    return "Hello, I'm " + this.name + "! I cannot talk. I belong to " + this.owner + ". " +
+                           "I'm known as " + this.description + ".";
+                }
+            };
+        }
+
+        // Step 3: Create dog objects using the constructor
+        var dog1 = new Dog("Clifford", "Emily Elizabeth", "a giant dog that gets in constant trouble", "I may be big in size but I have a big heart", true);
+        var dog2 = new Dog("Scooby-Doo", "Shaggy Rogers", "a Great Dane known for solving mysteries", "Scooby-Dooby-Doo!", true);
+        var dog3 = new Dog("Pluto", "Mickey Mouse", "Mickey's loyal pet dog", "Woof! Woof!", false);
+
+        // Step 4: Create an array to store the dog objects
+        var dogs = [dog1, dog2, dog3];
+
+        // Step 5: Use a for...in loop to display properties and values of the selected dog
+        var selectedDogName = prompt("Select a dog by typing its name (e.g., Clifford, Scooby-Doo, Pluto):");
+
+        var selectedDogExists = false;
+        var selectedDogInfo = "";
+
+        for (var i = 0; i < dogs.length; i++) {
+            if (dogs[i].name === selectedDogName) {
+                selectedDogExists = true;
+                selectedDogInfo = dogs[i].myGreeting();
+                break;
+            }
+        }
+
+        // Step 6: Display the selected dog's information or show an error message
+        if (selectedDogExists) {
+            // Display the selected dog's information
+            var dogInfoParagraph = document.createElement("p");
+            dogInfoParagraph.textContent = selectedDogInfo;
+            document.body.appendChild(dogInfoParagraph);
+        } else {
+            // Display an error message
+            alert("The selected dog does not exist in our database.");
+        }
+    </script>
+</body>
+</html>
